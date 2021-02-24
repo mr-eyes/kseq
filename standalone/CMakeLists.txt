@@ -8,7 +8,7 @@ include(../cmake/tools.cmake)
 
 # ---- Dependencies ----
 
-include(../cmake/CPM.cmake)
+include(../cmake/CPM_0.30.0.cmake)
 
 CPMAddPackage(NAME kseq SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 
