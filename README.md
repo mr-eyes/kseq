@@ -1,1 +1,55 @@
-# kseq
+# kseq (CMake Friendly)
+
+This is just a CMake wrapper for [kseq.h](http://lh3lh3.users.sourceforge.net/kseq.shtml).
+
+## Usage
+
+### Include
+
+```cpp
+#include <kseq/kseq.h>
+```
+
+### Method 1 (add_subdirectory)
+
+```cmake
+add_subdirectory(kseq)
+add_executable(ex1 main.cpp)
+target_link_libraries(ex1 kseq)
+```
+
+### Method 2 ([CPM.cmake](https://github.com/cpm-cmake/CPM.cmake))
+
+```cmake
+# ---- Setting up CPM.cmake
+set(CPM_DOWNLOAD_VERSION 0.31.1)
+set(CPM_DOWNLOAD_LOCATION "${PROJECT_SOURCE_DIR}/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
+
+if(NOT (EXISTS ${CPM_DOWNLOAD_LOCATION}))
+  message(STATUS "Downloading CPM.cmake v${CPM_DOWNLOAD_VERSION}")
+  file(DOWNLOAD https://github.com/TheLartians/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake ${CPM_DOWNLOAD_LOCATION})
+endif()
+
+include(${PROJECT_SOURCE_DIR}/CPM_${CPM_DOWNLOAD_VERSION}.cmake)
+
+# ---- Including kseq library
+
+## Online?
+CPMAddPackage(
+  NAME kseq
+  GIT_TAG 1.3
+  GITHUB_REPOSITORY mr-eyes/kseq # to get an installable target)
+)
+
+## Offline?
+if(FALSE) # fake a block comment
+CPMAddPackage(
+  NAME kseq
+  SOURCE_DIR  ${CMAKE_CURRENT_LIST_DIR}/kseq # to get an installable target)
+)
+endif()
+
+
+add_executable(ex2 main.cpp)
+target_link_libraries(ex2 kseq)
+```
