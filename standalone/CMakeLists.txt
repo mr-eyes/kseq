@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(KSeqStandalone LANGUAGES CXX)
 
+
 # --- Import tools ----
 
 include(../cmake/tools.cmake)
