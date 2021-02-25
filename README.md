@@ -1,6 +1,6 @@
 # kseq (CMake Friendly)
 
-[![Test_Include](https://github.com/mr-eyes/kseq/actions/workflows/standalone.yml/badge.svg)](https://github.com/mr-eyes/kseq/actions/workflows/standalone.yml)
+[![Test_Include](https://github.com/mr-eyes/kseq/actions/workflows/standalone.yml/badge.svg?branch=master)](https://github.com/mr-eyes/kseq/actions/workflows/standalone.yml)
 
 This is just a CMake wrapper for [kseq.h](http://lh3lh3.users.sourceforge.net/kseq.shtml).
 
