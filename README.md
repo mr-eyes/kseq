@@ -24,15 +24,8 @@ target_link_libraries(ex1 kseq)
 
 ```cmake
 # ---- Setting up CPM.cmake
-set(CPM_DOWNLOAD_VERSION 0.31.1)
-set(CPM_DOWNLOAD_LOCATION "${PROJECT_SOURCE_DIR}/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
 
-if(NOT (EXISTS ${CPM_DOWNLOAD_LOCATION}))
-  message(STATUS "Downloading CPM.cmake v${CPM_DOWNLOAD_VERSION}")
-  file(DOWNLOAD https://github.com/TheLartians/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake ${CPM_DOWNLOAD_LOCATION})
-endif()
-
-include(${PROJECT_SOURCE_DIR}/CPM_${CPM_DOWNLOAD_VERSION}.cmake)
+include(${PROJECT_SOURCE_DIR}/CPM.cmake)
 
 # ---- Including kseq library
 
@@ -43,7 +36,7 @@ CPMAddPackage(
   GITHUB_REPOSITORY mr-eyes/kseq # to get an installable target)
 )
 
-## Offline?
+## Have the source Offline?
 if(FALSE) # fake a block comment
 CPMAddPackage(
   NAME kseq
