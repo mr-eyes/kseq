@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.14...3.20)
 # Note: update this to your new project's name and version
 project(
   kseq
-  VERSION 1.3
+  VERSION 1.31
   LANGUAGES CXX
 )
 
