@@ -39,7 +39,7 @@
 
 // To enable 
 #define KS_FULL_COMMENT delimeter_size
-bool delimeter_size = 1;
+inline bool delimeter_size = false;
 
 #define __KS_TYPE(type_t) \
 	typedef struct __kstream_t { \
