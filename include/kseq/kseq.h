@@ -37,6 +37,10 @@
 #define KS_SEP_LINE  2 // line separator: "\n" (Unix) or "\r\n" (Windows)
 #define KS_SEP_MAX   2
 
+// To enable 
+#define KS_FULL_COMMENT delimeter_size
+bool delimeter_size = 1;
+
 #define __KS_TYPE(type_t) \
 	typedef struct __kstream_t { \
 		unsigned char *buf; \
@@ -128,7 +132,7 @@ typedef struct __kstring_t {
 			gotany = 1; \
 			memcpy(str->s + str->l, ks->buf + ks->begin, i - ks->begin); \
 			str->l = str->l + (i - ks->begin); \
-			ks->begin = i + 1; \
+			ks->begin = i + !KS_FULL_COMMENT; \
 			if (i < ks->end) { \
 				if (dret) *dret = ks->buf[i]; \
 				break; \
