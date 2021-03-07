@@ -16,8 +16,8 @@ This is just a CMake wrapper for [kseq.h](http://lh3lh3.users.sourceforge.net/ks
 
 In Fasta headers, `kseq.h` can return two parts.
 
-1- `kseqObj->name.s`: The sequence id, Or technincally speaking, the first word before the delimiter (`\t`, `\s`).
-2- `kseqObj->comment.s`: The rest of the header after the delimiter.
+1. `kseqObj->name.s`: The sequence id, Or technincally speaking, the first word before the delimiter (`\t`, `\s`).
+2. `kseqObj->comment.s`: The rest of the header after the delimiter.
 
 To retreive the whole header you would do something like: `kseqObj->name.s + delimiter + kseqObj->comment.s`. The delimiter here is unknown due to its variablity in the sequence files.
 
